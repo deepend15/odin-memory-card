@@ -1,2 +1,102 @@
 #root {
+  padding: 20px;
+  display: grid;
+  gap: 15px;
+  justify-items: center;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+#root > p {
+  font-size: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  /* background-image: radial-gradient(yellow, red); */
+  background-image: linear-gradient(red, 30%, yellow);
+  background-attachment: fixed;
+}
+
+section {
+  margin-top: 15px;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 50px;
+  row-gap: 25px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.rules {
+  line-height: 1.6;
+  flex-basis: 450px;
+  border: 8px double rgb(107, 30, 30);
+  padding: 20px;
+  background-color: rgb(245, 209, 161);
+  border-radius: 14px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.5rem;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.backpack-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.backpack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 12px;
+  column-gap: 8px;
+  border: 1px solid yellow;
+  padding: 18px;
+  border-radius: 10px;
+  background-color: rgb(54, 185, 54);
+}
+
+.backpack > div {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 2px dashed black;
+}
+
+.scoreboard-div {
+  flex-basis: 250px;
+  background-color: black;
+  display: grid;
+  padding: 20px;
+  border: 2px solid rgb(245, 209, 161);
+  color: yellow;
+  border-radius: 8px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.scoreboard-div > h2 {
+  font-size: 2rem;
+}
+
+.current-score {
+    margin: 5px 0 10px 0;
+}
+
+.score-line {
+    display: flex;
+    gap: 20px;
+}
+
+.score-line > span:first-child {
+    flex-basis: 135px;
 }
