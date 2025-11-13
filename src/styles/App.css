@@ -22,7 +22,7 @@ body {
 }
 
 .info-div {
-  margin-top: 15px;
+  margin: 15px 0 20px 0;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
@@ -35,9 +35,9 @@ body {
 .rules {
   line-height: 1.6;
   flex-basis: 450px;
-  border: 8px double rgb(107, 30, 30);
+  border: 6px ridge rgba(156, 36, 36, 0.71);
   padding: 20px;
-  background-color: rgb(248, 221, 185);
+  background-color: rgb(247, 226, 198);
   border-radius: 14px;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
@@ -74,7 +74,7 @@ h2 {
 
 .scoreboard-div {
   flex-basis: 250px;
-  background-color: black;
+  background-color: rgb(47, 47, 138);
   display: grid;
   padding: 20px;
   border: 2px solid rgb(245, 209, 161);
@@ -98,4 +98,65 @@ h2 {
 
 .score-line > span:first-child {
   flex-basis: 135px;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(var(--eighty-percent-scale));
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game-status-div {
+  margin-top: 20px;
+  background-color: rgb(203, 222, 228);
+  color: rgb(8, 8, 45);
+  padding: 25px 35px;
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  border: 4px ridge gold;
+  border-radius: 8px;
+  font-size: 1.7rem;
+  animation: pop-up 650ms ease-out;
+  --eighty-percent-scale: 1.25;
+}
+
+.game-status-div > p:first-child {
+  font-weight: 500;
+  font-size: 2.4rem;
+  animation: pop-up 650ms ease-out;
+  --eighty-percent-scale: 2.8;
+}
+
+.game-status-div > button {
+  margin-top: 15px;
+  font-size: 2rem;
+  padding: 10px 18px;
+  background-color: rgb(47, 47, 138);
+  color: yellow;
+  font-weight: 500;
+  font-family: "Courier New", Courier, monospace;
+  border: 2px outset silver;
+  border-radius: 15px;
+  will-change: transform;
+  transition: transform 100ms;
+}
+
+@media (hover: hover) {
+  .game-status-div > button:hover {
+    background-color: rgb(33, 33, 104);
+  }
+}
+
+.game-status-div > button:active {
+  border-style: inset;
+  transform: scale(0.95);
 }

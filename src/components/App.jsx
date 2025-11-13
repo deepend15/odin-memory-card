@@ -87,6 +87,21 @@ export default function App() {
     }
   }
 
+  function handleTryAgainClick() {
+    const newPokemonData = { ...pokemonData };
+    const newPokemonDataObjects = Object.values(newPokemonData);
+    newPokemonDataObjects.forEach((object) => {
+      newPokemonData[object.name] = {
+        ...newPokemonData[object.name],
+        selected: false,
+      };
+    });
+    setPokemonData(newPokemonData);
+    setGameStatus("active");
+    setCurrentScore(0);
+    setDisplayOrder(generateRandomDisplayOrder);
+  }
+
   return (
     <>
       <h1>Remember That Pok&eacute;mon!</h1>
@@ -110,6 +125,13 @@ export default function App() {
           displayOrder={displayOrder}
           handleCardClick={handleCardClick}
         />
+      )}
+      {gameStatus === "lose" && (
+        <div className="game-status-div">
+          <p>Oh no!</p>
+          <p>You already selected that Pok&eacute;mon.</p>
+          <button onClick={handleTryAgainClick}>TRY AGAIN</button>
+        </div>
       )}
     </>
   );
