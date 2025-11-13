@@ -1,6 +1,6 @@
 import "../styles/Cards.css";
 
-export default function Cards({ pokemonData, displayOrder }) {
+export default function Cards({ pokemonData, displayOrder, handleCardClick }) {
   const pokemonDataObjects = Object.values(pokemonData);
 
   function capitalizeString(string) {
@@ -19,7 +19,12 @@ export default function Cards({ pokemonData, displayOrder }) {
             const pokemonName = capitalizeString(matchingPokemonObject.name);
             const altText = `Image of ${pokemonName}`;
             return (
-              <button key={matchingPokemonObject.id} className="card">
+              <button
+                key={matchingPokemonObject.id}
+                className="card"
+                data-custom-id={matchingPokemonObject.id}
+                onClick={handleCardClick}
+              >
                 <img src={matchingPokemonObject.src} alt={altText} />
                 <p>{pokemonName}</p>
               </button>

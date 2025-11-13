@@ -38,7 +38,6 @@
 
 @media (hover: hover) {
   .card:hover {
-    cursor: pointer;
     transform: scale(1.125);
     box-shadow: 0 0 10px lightyellow;
   }

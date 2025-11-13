@@ -11,6 +11,7 @@ export default function App() {
   const [bestScore, setBestScore] = useState(0);
   const [pokemonData, setPokemonData] = useState({});
   const [displayOrder, setDisplayOrder] = useState([]);
+  const [gameStatus, setGameStatus] = useState("active");
 
   function generateRandomDisplayOrder() {
     let orderArray = [];
@@ -47,6 +48,7 @@ export default function App() {
                 name: pokemonObject.name,
                 id: pokemonObject.id,
                 src: srcValue,
+                selected: false,
               },
             }));
           }
@@ -58,6 +60,32 @@ export default function App() {
       ignore = true;
     };
   }, []);
+
+  function handleCardClick(e) {
+    const targetId = Number(e.currentTarget.dataset.customId);
+    const pokemonDataObjects = Object.values(pokemonData);
+    const targetedObjectArray = pokemonDataObjects.filter(
+      (object) => object.id === targetId
+    );
+    const targetedObject = targetedObjectArray[0];
+    if (!targetedObject.selected) {
+      const newPokemonData = {
+        ...pokemonData,
+        [targetedObject.name]: {
+          ...pokemonData[targetedObject.name],
+          selected: true,
+        },
+      };
+      setPokemonData(newPokemonData);
+      setCurrentScore((previousScore) => previousScore + 1);
+      if (currentScore === bestScore)
+        setBestScore((previousScore) => previousScore + 1);
+      if (currentScore === 11) setGameStatus("win");
+      else setDisplayOrder(generateRandomDisplayOrder);
+    } else {
+      setGameStatus("lose");
+    }
+  }
 
   return (
     <>
@@ -73,10 +101,16 @@ export default function App() {
             same Pok&eacute;mon twice, or you'll have to start all over!
           </p>
         </section>
-        <Backpacks />
+        <Backpacks currentScore={currentScore} />
         <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       </div>
-      <Cards pokemonData={pokemonData} displayOrder={displayOrder} />
+      {gameStatus === "active" && (
+        <Cards
+          pokemonData={pokemonData}
+          displayOrder={displayOrder}
+          handleCardClick={handleCardClick}
+        />
+      )}
     </>
   );
 }
