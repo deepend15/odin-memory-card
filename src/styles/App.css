@@ -16,12 +16,12 @@ h1 {
 
 body {
   min-height: 100vh;
-  /* background-image: radial-gradient(yellow, red); */
-  background-image: linear-gradient(red, 30%, yellow);
+  background-image: radial-gradient(rgb(251, 251, 149), rgb(153, 181, 247));
+  /* background-image: linear-gradient(red, 30%, yellow); */
   background-attachment: fixed;
 }
 
-section {
+.info-div {
   margin-top: 15px;
   width: 90%;
   display: flex;
@@ -89,14 +89,14 @@ h2 {
 }
 
 .current-score {
-    margin: 5px 0 10px 0;
+  margin: 5px 0 10px 0;
 }
 
 .score-line {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .score-line > span:first-child {
-    flex-basis: 135px;
+  flex-basis: 135px;
 }

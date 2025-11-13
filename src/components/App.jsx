@@ -63,8 +63,8 @@ export default function App() {
     <>
       <h1>Remember That Pok&eacute;mon!</h1>
       <p>A Pok&eacute;mon memory game</p>
-      <section>
-        <div className="rules">
+      <div className="info-div">
+        <section className="rules">
           <p>
             Professor Oak needs your help assigning out 12 Pok&eacute;mon to
             split between 2 young trainers. Select a Pok&eacute;mon to assign it
@@ -72,10 +72,10 @@ export default function App() {
             backpacks are full. <b>However,</b> be careful not to select the
             same Pok&eacute;mon twice, or you'll have to start all over!
           </p>
-        </div>
+        </section>
         <Backpacks />
         <Scoreboard currentScore={currentScore} bestScore={bestScore} />
-      </section>
+      </div>
       <Cards pokemonData={pokemonData} displayOrder={displayOrder} />
     </>
   );

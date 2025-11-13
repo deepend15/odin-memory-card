@@ -1,0 +1,49 @@
+.card-div {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 25px;
+  row-gap: 30px;
+  justify-content: center;
+  width: 90%;
+}
+
+.card {
+  display: grid;
+  place-items: center;
+  width: 165px;
+  height: 165px;
+  padding: 10px;
+  background: linear-gradient(red, white);
+  color: black;
+  border: 2px solid black;
+  font-size: 1.7rem;
+  border-radius: 50%;
+  position: relative;
+  will-change: transform;
+  transition: transform 300ms;
+}
+
+.card > img {
+  width: 125px;
+  position: absolute;
+  transform: translateY(-12px);
+}
+
+.card > p {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(calc(-100% - 10px));
+}
+
+@media (hover: hover) {
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.125);
+    box-shadow: 0 0 10px lightyellow;
+  }
+}
+
+.card:active {
+  transform: scale(0.9);
+}
