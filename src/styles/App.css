@@ -196,3 +196,9 @@ h2 {
   border-style: inset;
   transform: scale(0.95);
 }
+
+@media (width < 565px) {
+  h1 {
+    line-height: 1.5;
+  }
+}
