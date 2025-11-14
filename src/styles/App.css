@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "Pokemon Solid";
+  src: url("../fonts/PokemonSolidNormal.woff2") format("woff2"),
+    url("../fonts/PokemonSolidNormal.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 #root {
   padding: 20px;
   display: grid;
@@ -8,7 +17,13 @@
 
 h1 {
   font-size: 2.4rem;
-  font-weight: 500;
+  font-family: "Pokemon Solid", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: 4px;
+  font-size: 3.4rem;
+  color: yellow;
+  -webkit-text-stroke: 2px darkblue;
+  text-align: center;
 }
 
 #root > p {
@@ -42,6 +57,7 @@ body {
   border-radius: 14px;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
+  box-shadow: 0 0 8px rgb(143, 143, 143);
 }
 
 h2 {
@@ -65,6 +81,7 @@ h2 {
   padding: 18px;
   border-radius: 10px;
   background-color: rgb(54, 185, 54);
+  box-shadow: 0 0 6px rgb(166, 166, 166);
 }
 
 .backpack > div {
@@ -82,6 +99,7 @@ h2 {
   color: yellow;
   border-radius: 8px;
   font-family: "Courier New", Courier, monospace;
+  box-shadow: 0 0 6px rgb(166, 166, 166);
 }
 
 .scoreboard-div > h2 {
@@ -157,7 +175,6 @@ h2 {
   background-color: rgb(47, 47, 138);
   color: yellow;
   font-weight: 500;
-  font-family: "Courier New", Courier, monospace;
   border: 2px outset silver;
   border-radius: 15px;
   will-change: transform;
