@@ -5,6 +5,11 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+
+  /* fixes font display issue in linux vs. windows screens, along with the fixed line-height under h1 */
+  ascent-override: 92%;
+  descent-override: 8%;
+  line-gap-override: 0%;
 }
 
 #root {
@@ -16,7 +21,6 @@
 }
 
 h1 {
-  font-size: 2.4rem;
   font-family: "Pokemon Solid", system-ui, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   letter-spacing: 4px;
@@ -24,6 +28,7 @@ h1 {
   color: yellow;
   -webkit-text-stroke: 2px darkblue;
   text-align: center;
+  line-height: 1.1;
 }
 
 #root > p {
