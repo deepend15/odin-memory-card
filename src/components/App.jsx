@@ -87,7 +87,7 @@ export default function App() {
     }
   }
 
-  function handleTryAgainClick() {
+  function handlePlayAgainClick() {
     const newPokemonData = { ...pokemonData };
     const newPokemonDataObjects = Object.values(newPokemonData);
     newPokemonDataObjects.forEach((object) => {
@@ -130,7 +130,20 @@ export default function App() {
         <div className="game-status-div">
           <p>Oh no!</p>
           <p>You already selected that Pok&eacute;mon.</p>
-          <button onClick={handleTryAgainClick}>TRY AGAIN</button>
+          <button onClick={handlePlayAgainClick}>TRY AGAIN</button>
+        </div>
+      )}
+      {gameStatus === "win" && (
+        <div className="game-status-div win">
+          <p>Nice job!!</p>
+          <div>
+            <p>You successfully assigned out all Pok&eacute;mon.</p>
+            <p>
+              Thanks to you, two young trainers can now begin their
+              Pok&eacute;mon journey!
+            </p>
+          </div>
+          <button onClick={handlePlayAgainClick}>PLAY AGAIN</button>
         </div>
       )}
     </>

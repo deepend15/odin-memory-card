@@ -3,6 +3,7 @@
   display: grid;
   gap: 15px;
   justify-items: center;
+  color: rgb(8, 8, 45);
 }
 
 h1 {
@@ -17,7 +18,6 @@ h1 {
 body {
   min-height: 100vh;
   background-image: radial-gradient(rgb(251, 251, 149), rgb(153, 181, 247));
-  /* background-image: linear-gradient(red, 30%, yellow); */
   background-attachment: fixed;
 }
 
@@ -38,6 +38,7 @@ body {
   border: 6px ridge rgba(156, 36, 36, 0.71);
   padding: 20px;
   background-color: rgb(247, 226, 198);
+  color: black;
   border-radius: 14px;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
@@ -129,11 +130,24 @@ h2 {
   --eighty-percent-scale: 1.25;
 }
 
+.game-status-div.win {
+  width: min(500px, 75%);
+}
+
+.game-status-div p {
+  text-align: center;
+  line-height: 1.5;
+}
+
 .game-status-div > p:first-child {
   font-weight: 500;
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   animation: pop-up 650ms ease-out;
-  --eighty-percent-scale: 2.8;
+  --eighty-percent-scale: 2.5;
+}
+
+.game-status-div.win > div > p:first-child {
+  margin-bottom: 10px;
 }
 
 .game-status-div > button {
