@@ -41,19 +41,21 @@ export default function App() {
       getPokemon(pokemonObject.name)
         .then((data) => {
           if (!ignore) {
-            const srcValue = data.sprites.front_default;
             setPokemonData((previousPokemonData) => ({
               ...previousPokemonData,
               [pokemonObject.name]: {
                 name: pokemonObject.name,
                 id: pokemonObject.id,
-                src: srcValue,
+                src: data,
                 selected: false,
               },
             }));
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          setGameStatus("error");
+        });
     });
     setDisplayOrder(generateRandomDisplayOrder);
     return () => {
@@ -144,6 +146,12 @@ export default function App() {
             </p>
           </div>
           <button onClick={handlePlayAgainClick}>PLAY AGAIN</button>
+        </div>
+      )}
+      {gameStatus === "error" && (
+        <div className="error-div">
+          <p>An error occurred fetching Pok&eacute;mon data.</p>
+          <p>We are working to correct this.</p>
         </div>
       )}
     </>

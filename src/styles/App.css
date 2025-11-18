@@ -186,6 +186,20 @@ h2 {
   transition: transform 100ms;
 }
 
+.error-div {
+  margin-top: 20px;
+}
+
+.error-div > p {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.error-div > p:first-child {
+  margin-bottom: 10px;
+}
+
 @media (hover: hover) {
   .game-status-div > button:hover {
     background-color: rgb(33, 33, 104);

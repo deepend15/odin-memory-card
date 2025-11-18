@@ -1,5 +1,5 @@
 export async function getPokemon(pokemonName) {
-  const url = `https://pokeapi.co/api/v2/pokemon-form/${pokemonName}`;
+  const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
 
   try {
     const response = await fetch(url, { mode: "cors" });
@@ -12,7 +12,7 @@ export async function getPokemon(pokemonName) {
 
     const json = await response.json();
 
-    return json;
+    return json.sprites.front_default;
   } catch (error) {
     console.error(error);
   }
