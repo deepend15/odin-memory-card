@@ -12,6 +12,7 @@ export default function App() {
   const [pokemonData, setPokemonData] = useState({});
   const [displayOrder, setDisplayOrder] = useState([]);
   const [gameStatus, setGameStatus] = useState("active");
+  const [loading, setLoading] = useState(true);
 
   function generateRandomDisplayOrder() {
     let orderArray = [];
@@ -58,6 +59,7 @@ export default function App() {
         });
     });
     setDisplayOrder(generateRandomDisplayOrder);
+    setLoading(false);
     return () => {
       ignore = true;
     };
@@ -121,6 +123,7 @@ export default function App() {
         <Backpacks currentScore={currentScore} />
         <Scoreboard currentScore={currentScore} bestScore={bestScore} />
       </div>
+      {loading && <div>Loading...</div>}
       {gameStatus === "active" && (
         <Cards
           pokemonData={pokemonData}
